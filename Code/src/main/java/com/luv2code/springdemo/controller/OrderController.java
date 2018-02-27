@@ -88,7 +88,7 @@ public class OrderController {
         for(String s : theOrderHelper.getQuantities())
             quantities.add(Integer.valueOf(s));
         Customer theCustomer = customerService.getCustomer(theOrderHelper.getCustomer_id());
-        OrderOfCustomer theOrder = new OrderOfCustomer(theCustomer);
+        OrderOfCustomer theOrder = new OrderOfCustomer();
         int chosenProductId = 1;
         for(int quantity: quantities) {
             if(quantity != 0) {
@@ -99,7 +99,8 @@ public class OrderController {
             chosenProductId += 1;
         }
         // save the customer using our service
-        customerService.saveOrderOfCustomer(theOrder);
+        theCustomer.addOrder(theOrder);
+        customerService.saveCustomer(theCustomer);
 
         return "redirect:/customer/list";
     }

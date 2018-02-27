@@ -15,7 +15,7 @@ public class OrderOfCustomer {
     private int id;
 
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="customer_id")
+    @JoinColumn(name="customer_id", updatable = false)
     private Customer customer;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "orderOfCustomer", cascade =  CascadeType.ALL)

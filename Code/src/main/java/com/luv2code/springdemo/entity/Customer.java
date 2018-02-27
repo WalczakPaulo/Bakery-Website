@@ -22,7 +22,7 @@ public class Customer {
 	@Column(name="email")
 	private String email;
 
-	@OneToMany(mappedBy = "customer", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<OrderOfCustomer> orders;
 
 	public List<OrderOfCustomer> getOrders() {
