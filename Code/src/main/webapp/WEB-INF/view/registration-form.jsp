@@ -34,33 +34,22 @@
 
 
 
-    <form:form action="${pageContext.request.contextPath}/authenticateTheUser"
-        method="post">
-        <div class="form-input">
-            <input type="text" name="username" placeholder="Username">
-        </div>
-        <div class="form-input">
-            <input  type="password" name="password" placeholder="Password">
-        </div>
-        <input class="btn-login" style = "font-family: 'FontAwesome';" type="submit" value="Login">
+    <form:form action="${pageContext.request.contextPath}/register/processRegistrationForm"
+               modelAttribute="bakeryUser">
+
+        <c:if test="${registrationError != null}">
+                  ${registrationError}
+        </c:if>
+
+    <div class="form-input">
+        <form:input path="userName" placeholder="username" />
+    </div>
+    <div class="form-input">
+        <form:password path="password" placeholder="password" />
+    </div>
+        <input class="btn-login" type="submit" value="Register">
 
     </form:form>
-
-    <div style="margin-top: 25px;">
-        <a
-                href="${pageContext.request.contextPath}
-    /register/showRegistrationForm"
-                class="btn-login"
-                style="text-decoration: none; font-family: 'FontAwesome';"
-
-                role="button" aria
-                -
-                pressed="true">
-            Register New User
-        </a>
-    </div>
-
-    <br><br>
 
     <c:if test="${param.error != null}">
 
