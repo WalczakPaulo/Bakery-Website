@@ -7,4 +7,4 @@
 
 ![alt text](https://github.com/Walczakp007/Bakery-Website/blob/master/RepoImage/menu.png)
 
-![alt text](https://github.com/Walczakp007/Bakery-Website/blob/master/RepoImage/diagram.png)
+![alt text](https://github.com/Walczakp007/Bakery-Website/blob/master/RepoImage/rsz_diagram.png)
