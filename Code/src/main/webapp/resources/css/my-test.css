@@ -34,7 +34,7 @@ p {
 
 .container {
     width: 550px;
-    height: 420px;
+    height: 450px;
     text-align: center;
     margin: 0 auto;
     background-color: rgba(72,61,139,0.8);
@@ -45,7 +45,7 @@ p {
 .container img{
     width: 150px;
     height: 150px;
-    margin-top: -60px;
+    margin-top: -70px;
     margin-bottom: 30px;
     border-radius: 50%;
 }
@@ -107,6 +107,7 @@ input[type="text"], input[type="password"] {
     background-color: mediumseagreen;
     border: none;
     border-radius: 5px;
+    margin-bottom: 10px;
 
 }
 

@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .failed {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
             color: red;
         }
     </style>
@@ -26,11 +32,7 @@
 <div class="container">
     <img src="${pageContext.request.contextPath}/resources/images/logo.jpg"/>
 
-    <c:if test="${param.error != null}">
 
-        <i class="failed">Sorry! You entered invalid username/password.</i>
-
-    </c:if>
 
     <form:form action="${pageContext.request.contextPath}/authenticateTheUser"
         method="post">
@@ -44,13 +46,19 @@
         <input type="radio" name="gender" value="female"> Register<br>
         <input class="btn-login" type="submit" value="Login">
     </form:form>
-</div>
 
-<div class="wrapperLinks">
+    <c:if test="${param.error != null}">
 
-    <a href="/customer/list">Go to site</a>
+        <i class="failed">Sorry! You entered invalid username/password.</i>
+
+    </c:if>
 
 
+    <c:if test="${param.logout != null}">
+
+        <i class="failed">You have been logged out.</i>
+
+    </c:if>
 </div>
 
 

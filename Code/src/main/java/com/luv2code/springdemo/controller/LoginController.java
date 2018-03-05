@@ -20,4 +20,9 @@ public class LoginController {
         return new ModelAndView("redirect:/customer/list");
     }
 
+    @GetMapping("/access-denied")
+    public String showAccessDenied(){
+        return "access-denied";
+    }
+
 }
